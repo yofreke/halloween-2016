@@ -1,0 +1,11 @@
+{
+  "globalDependencies": {
+    "node": "registry:env/node#4.0.0+20160918225031",
+    "socket.io": "registry:dt/socket.io#1.4.4+20160909205835",
+    "winston": "registry:dt/winston#0.0.0+20160417152829"
+  },
+  "dependencies": {
+    "debug": "registry:npm/debug#2.0.0+20160723033700",
+    "express": "registry:npm/express#4.14.0+20160925001530"
+  }
+}

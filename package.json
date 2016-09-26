@@ -1,0 +1,25 @@
+{
+  "name": "halloween-2016",
+  "scripts": {
+    "build": "echo \"TODO\"",
+    "serve": "./scripts/serve.sh",
+    "serve:matchmaking": "pm2 start dist/matchmakingServer.js --name=\"Matchmaking\"",
+    "serve:gameplay": "pm2 start dist/gameplayServer.js --name=\"Gameplay\"",
+    "watch": "echo \"TODO\"",
+    "postinstall": "typings install",
+    "lint": "tslint --project tsconfig.json --format prose 'src/**/*.ts?(x)'"
+  },
+  "dependencies": {
+    "debug": "^2.2.0",
+    "express": "^4.14.0",
+    "pm2": "^2.0.15",
+    "socket.io": "^1.4.8",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "ts-node": "^1.3.0",
+    "tslint": "^3.15.1",
+    "typescript": "^2.0.3",
+    "typings": "^1.4.0"
+  }
+}
