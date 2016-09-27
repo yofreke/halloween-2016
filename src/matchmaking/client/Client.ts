@@ -2,9 +2,9 @@ import { LoggerInstance } from 'winston';
 
 import getLogger from 'utils/logging';
 
-class Client {
-  private socket: SocketIO.Socket;
-  private logger: LoggerInstance;
+abstract class Client {
+  protected socket: SocketIO.Socket;
+  protected logger: LoggerInstance;
 
   constructor (socket: SocketIO.Socket) {
     this.socket = socket;
@@ -13,9 +13,7 @@ class Client {
     this.addListeners();
   }
 
-  private addListeners (): void {
-    // TODO: implement
-  }
+  protected abstract addListeners (): void;
 }
 
 export default Client;

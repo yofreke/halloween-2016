@@ -12,7 +12,6 @@
   },
   "files": [
     "typings/index.d.ts",
-    "src/matchmaking/index.ts",
-    "src/gameplay/index.ts"
+    "src/server/index.ts"
   ]
 }
