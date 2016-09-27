@@ -4,7 +4,6 @@ import getLogger from 'utils/logging';
 
 import IServer from 'server/IServer';
 
-import GameplayServerClient from './client/GameplayServerClient';
 import PlayerClient from './client/PlayerClient';
 
 
@@ -12,10 +11,8 @@ class GameplayServer {
   private logger: winston.LoggerInstance;
   private server: IServer;
 
-  private backchannelNsp: SocketIO.Namespace;
   private userNsp: SocketIO.Namespace;
 
-  private bcClients: GameplayServerClient[];
   private clients: PlayerClient[];
 
   constructor (server: IServer) {
@@ -23,7 +20,6 @@ class GameplayServer {
     this.logger = getLogger('GameplayServer');
 
     this.clients = [];
-    this.bcClients = [];
   }
 
   public addIo (io: SocketIO.Server): void {

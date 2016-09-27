@@ -1,9 +1,8 @@
-#!/usr/bin/env node
-'use strict';
-
 // Do some args parsing
-
 import Server from './Server';
+import config, { parseCLI } from 'config';
+
+parseCLI();
 
 const server = new Server();
-server.start(8081);
+server.start(config.port);
