@@ -5,6 +5,7 @@ import * as winston from 'winston';
 import getLogger from 'utils/logging';
 
 import IServer from './IServer';
+import GameplayServer from 'gameplay';
 import MatchmakingServer from 'matchmaking';
 
 
@@ -14,12 +15,14 @@ class Server implements IServer {
   private io: SocketIO.Server;
 
   private matchmakingServer: MatchmakingServer;
+  private gameplayServer: GameplayServer;
 
   constructor () {
     this.app = null;
     this.logger = getLogger('Server');
 
     this.matchmakingServer = new MatchmakingServer(this);
+    this.gameplayServer = new GameplayServer(this);
   }
 
   public start (port: number): void {
@@ -47,6 +50,8 @@ class Server implements IServer {
     this.io = socketio(this.app);
 
     this.matchmakingServer.addIo(this.io);
+
+    this.gameplayServer.addIo(this.io);
   }
 }
 

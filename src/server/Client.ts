@@ -8,7 +8,7 @@ abstract class Client {
 
   constructor (socket: SocketIO.Socket) {
     this.socket = socket;
-    this.logger = getLogger('matchmaking:Client:' + socket.id);
+    this.logger = getLogger('Client:' + socket.id);
 
     this.addListeners();
   }

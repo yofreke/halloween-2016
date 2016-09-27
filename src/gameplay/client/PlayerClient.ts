@@ -7,10 +7,10 @@ class PlayerClient extends Client {
   }
 
   protected addListeners (): void {
-    this.socket.on('getNewMatch', this.onGetNewMatch.bind(this));
+    this.socket.on('joinRoom', this.onJoinRoom.bind(this));
   }
 
-  private onGetNewMatch (data: Object): void {}
+  private onJoinRoom (data: Object): void {}
 
 }
 
